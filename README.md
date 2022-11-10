@@ -3,6 +3,7 @@
 
 ## Gameplay
 
+- WASD controller
 - Multiplayer
 - Weapon System
 - Bagpack System
