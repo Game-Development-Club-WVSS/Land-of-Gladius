@@ -1,6 +1,8 @@
 # Blended-Universe
  School Computer Study Project: A 3D multiplayer open-world social game with multiple world scenes.
 
+## To do list
+
 ## Gameplay
 
 - WASD controller
@@ -21,6 +23,7 @@
 - Real world brush
 - Car system
 - Train and landscapes
+- Wheather System
 
 ## Scenes Designs
 
@@ -39,3 +42,4 @@
 - Custom game style selecting
 
 ## Game Details
+
