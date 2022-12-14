@@ -77,7 +77,7 @@ public class FPS_Controller : MonoBehaviour
         if (attack && attackCnt == 2) animator.SetTrigger("Attack02");
         if (attack && attackCnt == 3) animator.SetTrigger("Attack03");
 
-        if (Time.realtimeSinceStartup - lastAttack >= 1)
+        if (Time.realtimeSinceStartup - lastAttack >= 1.5f)
         {
             attackCnt = 0;
             attack = false;

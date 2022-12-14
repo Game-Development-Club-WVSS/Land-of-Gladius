@@ -50,25 +50,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color01Power: 3.1
-    - _Color02Power: 3.4
-    - _Color03Power: 3
-    - _Color04Power: 3
-    - _Color05Power: 3
-    - _Color06Power: 3
+    - _Color01Power: 3.55
+    - _Color02Power: 3.01
+    - _Color03Power: 3.48
+    - _Color04Power: 3.83
+    - _Color05Power: 4.38
+    - _Color06Power: 0.18
     - _Color07Power: 3
-    - _Color08Power: 2.8
-    - _Color09Power: 2
+    - _Color08Power: 2.42
+    - _Color09Power: 2.24
     - __dirty: 1
     m_Colors:
-    - _Color01: {r: 0.12709142, g: 0.18505876, b: 0.5943396, a: 0}
-    - _Color02: {r: 0, g: 0, b: 0, a: 0}
-    - _Color03: {r: 0.16967781, g: 0.32275674, b: 0.8773585, a: 0}
-    - _Color04: {r: 0.46226418, g: 0.042156123, b: 0.1387327, a: 0}
-    - _Color05: {r: 0.19318649, g: 0.090482935, b: 0.5754717, a: 0}
-    - _Color06: {r: 0.7169812, g: 0.105968855, b: 0.65032536, a: 0}
-    - _Color07: {r: 0.5471698, g: 0.30360535, b: 0.106680855, a: 0}
-    - _Color08: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
-    - _Color09_SKIN: {r: 0.7264151, g: 0.6359106, b: 0.5116886, a: 0}
-    - _EmissionPower: {r: 1.3568628, g: 1.3568628, b: 1.3568628, a: 0}
+    - _Color01: {r: 0.6792453, g: 0, b: 0.11129326, a: 0}
+    - _Color02: {r: 0.9716981, g: 0.25361925, b: 0.25361925, a: 0}
+    - _Color03: {r: 0, g: 0.13116556, b: 0.3584906, a: 0}
+    - _Color04: {r: 0.5754717, g: 0.36465755, b: 0.057909057, a: 0}
+    - _Color05: {r: 0.093449585, g: 0.38539237, b: 0.5943396, a: 0}
+    - _Color06: {r: 1, g: 1, b: 1, a: 0}
+    - _Color07: {r: 1, g: 0.42142862, b: 0, a: 0}
+    - _Color08: {r: 0.5471698, g: 0.50931525, b: 0.50931525, a: 0}
+    - _Color09_SKIN: {r: 0.754717, g: 0.61346936, b: 0.41770497, a: 0}
+    - _EmissionPower: {r: 0.8207547, g: 0.6583418, b: 0, a: 0}
   m_BuildTextureStacks: []
