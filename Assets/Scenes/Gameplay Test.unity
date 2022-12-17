@@ -2811,7 +2811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionDistance: 10
   attackDistance: 2
-  speed: 1
+  speed: 50
 --- !u!1 &402370856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7138046058937190342, guid: 48ded525203e24044b165c0bd77175fb, type: 3}
@@ -4876,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &706412262
 Transform:
   m_ObjectHideFlags: 0
