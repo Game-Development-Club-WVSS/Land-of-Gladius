@@ -2772,7 +2772,7 @@ Transform:
   m_GameObject: {fileID: 402032988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.08, y: 0.9, z: 1.19}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1324195505}
@@ -2811,7 +2811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionDistance: 10
   attackDistance: 2
-  speed: 50
+  speed: 2
 --- !u!1 &402370856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7138046058937190342, guid: 48ded525203e24044b165c0bd77175fb, type: 3}
@@ -10436,7 +10436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2729100679699431623, guid: 57afc98a9486fd94db1965e854a296e9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741802484758777752, guid: 57afc98a9486fd94db1965e854a296e9, type: 3}
       propertyPath: m_Layer
