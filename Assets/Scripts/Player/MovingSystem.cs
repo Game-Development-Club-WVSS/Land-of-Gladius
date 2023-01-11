@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,30 +22,48 @@ public class MovingSystem : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
+    bool canMove = true;
 
-    //[HideInInspector]
-    public bool canMove = true;
     private Animator animator;
+    private AudioSource step;
+    private CombatSystem combatSystem;
+
 
     void Start()
     {
         animator = joint.GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
+        characterController = this.GetComponent<CharacterController>();
+        step = this.GetComponent<AudioSource>();
+        combatSystem = this.GetComponent<CombatSystem>();
     }
 
     int attackCnt = 0;
     bool attack = false;
     float lastAttack;
+    bool lastGrounded = true;
+
     void Update()
     {
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
+
+        canMove = Cursor.lockState == CursorLockMode.Locked;
+
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
+
+        // get hurt
+        if (characterController.isGrounded && lastGrounded == false && moveDirection.y < -12)
+        {
+            combatSystem.HealthChange(Convert.ToInt32(300 * moveDirection.y)+2000);
+        }
+        lastGrounded = characterController.isGrounded;
+
+
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
@@ -69,7 +88,7 @@ public class MovingSystem : MonoBehaviour
 
 
         // Player and Camera rotation
-        if (canMove&& Cursor.lockState == CursorLockMode.Locked)
+        if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -79,7 +98,7 @@ public class MovingSystem : MonoBehaviour
 
         //==================== Animation =======================
 
-        if (Input.GetMouseButtonDown(0) && Cursor.lockState == CursorLockMode.Locked)
+        if (Input.GetMouseButtonDown(0) && canMove)
         {
             attack = true;
             attackCnt++;
@@ -91,12 +110,18 @@ public class MovingSystem : MonoBehaviour
         if (attack && attackCnt == 2) animator.SetTrigger("Attack02");
         if (attack && attackCnt == 3) animator.SetTrigger("Attack03");
 
+        step.pitch = 0.7f / 4 * Mathf.Max(curSpeedX,curSpeedY);
         if (Time.realtimeSinceStartup - lastAttack >= 1.5f)
         {
             attackCnt = 0;
             attack = false;
             animator.SetBool("Attack", false);
-            animator.SetBool("Move", moveDirection.z != 0);
+            if (moveDirection.z != 0)
+            {
+                animator.SetBool("Move", true);
+                if(!step.isPlaying && characterController.isGrounded) step.Play();
+            }
+            else step.Stop();
         }
 
         if (attack)

@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class PartyMonsterMovement : MonoBehaviour
 {
-    public float detectionDistance = 10;
-    public float attackDistance = 2;
-    public float speed = 7;
+    public float detectionDistance = 7;
+    public float attackDistance = 1.8f;
+    public float speed = 1;
     private Transform player;
     private CharacterController cc;
 
@@ -30,14 +30,12 @@ public class PartyMonsterMovement : MonoBehaviour
         {
             targetPosition.y = transform.position.y;
             transform.LookAt(targetPosition);
-            if(distance<= attackDistance)
+            float velocity = 0;
+            if(Mathf.Abs(distance) <= detectionDistance && Mathf.Abs(distance)> attackDistance)
             {
-
+                velocity = speed;
             }
-            else
-            {
-                cc.SimpleMove(transform.forward * speed * Time.deltaTime * 100);
-            }
+            cc.SimpleMove(transform.forward * velocity * Time.deltaTime * 100);
         }
     }
 }

@@ -7,16 +7,17 @@ public class CombatSystem : MonoBehaviour
     public int health = 10000;
     public int HP = 10000;
 
-    void Die()
+    public void Die()
     {
 
     }
 
-    void HealthChange(int value)
+    public void HealthChange(int value)
     {
+        print(value);
         health += value;
-        health = Mathf.Max(health, HP);
-        health = Mathf.Min(health, 0);
+        health = Mathf.Min(health, HP);
+        health = Mathf.Max(health, 0);
         if (health == 0) Die();
     }
     
