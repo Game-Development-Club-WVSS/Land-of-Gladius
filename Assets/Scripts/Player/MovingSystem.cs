@@ -57,9 +57,9 @@ public class MovingSystem : MonoBehaviour
         float movementDirectionY = moveDirection.y;
 
         // get hurt
-        if (characterController.isGrounded && lastGrounded == false && moveDirection.y < -12)
+        if (characterController.isGrounded && lastGrounded == false && moveDirection.y < -20)
         {
-            combatSystem.HealthChange(Convert.ToInt32(300 * moveDirection.y)+2000);
+            combatSystem.HealthChange(Convert.ToInt32(150 * moveDirection.y)+1000);
         }
         lastGrounded = characterController.isGrounded;
 

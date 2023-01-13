@@ -14,7 +14,6 @@ public class CombatSystem : MonoBehaviour
 
     public void HealthChange(int value)
     {
-        print(value);
         health += value;
         health = Mathf.Min(health, HP);
         health = Mathf.Max(health, 0);
