@@ -28,7 +28,6 @@ public class MovingSystem : MonoBehaviour
     private AudioSource step;
     private CombatSystem combatSystem;
 
-
     void Start()
     {
         animator = joint.GetComponent<Animator>();
@@ -121,7 +120,11 @@ public class MovingSystem : MonoBehaviour
                 animator.SetBool("Move", true);
                 if(!step.isPlaying && characterController.isGrounded) step.Play();
             }
-            else step.Stop();
+            else
+            {
+                step.Stop();
+                animator.SetBool("Move", false);
+            }
         }
 
         if (attack)
