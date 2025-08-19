@@ -1,6 +1,11 @@
 # Land of Gladius
 Land of Gladius is a 3D multiplayer, open-world social game featuring multiple world scenes.
 
+[![Watch the video](https://i.ytimg.com/an_webp/FV8X0mRA3MM/mqdefault_6s.webp?du=3000&sqp=COWQ9bQG&rs=AOn4CLApVWaELTbpZE0v9m-lw_oLxkYBVQ)](https://www.youtube.com/watch?v=FV8X0mRA3MM)
+
+[![Watch the video](https://i.ytimg.com/an_webp/F78O5PRGgU8/mqdefault_6s.webp?du=3000&sqp=CNfC9bQG&rs=AOn4CLCG8bFaEIgGm-yGUNucb-Dz6FG8Ug)](https://www.youtube.com/watch?v=F78O5PRGgU8)
+
+
 ## To do list
 
 ## Gameplay
